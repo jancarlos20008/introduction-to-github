@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta para ti ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Quicksand", sans-serif;
+      background: linear-gradient(to bottom right, #ffecec, #fff5f5, #ffebeb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+
+    .envelope {
+      --envelope-width: 300px;
+      --envelope-height: 175px;
+      width: var(--envelope-width);
+      height: var(--envelope-height);
+      position: relative;
+      cursor: pointer;
+      perspective: 1000px;
+    }
+
+    @media (min-width: 720px) {
+      .envelope {
+        --envelope-width: 400px;
+        --envelope-height: 220px;
+      }
+    }
+
+    .envelope-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s ease-in-out;
+    }
+
+    .envelope:hover .envelope-inner {
+      transform: rotateY(180deg);
+    }
+
+    .envelope-front, .envelope-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background: #d14d44;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .envelope-back {
+      transform: rotateY(180deg);
+      background: #c24e46;
+    }
+
+    .letter {
+      background: white;
+      width: 90%;
+      height: 90%;
+      padding: 1.5rem;
+      border-radius: 5px;
+      color: #c0392b;
+      text-align: center;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .letter img {
+      max-width: 100px;
+      height: auto;
+    }
+
+    .letter p {
+      font-weight: bold;
+      line-height: 1.5;
+    }
+
+    .highlight {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      color: #a5281b;
+    }
+
+    .address p span:last-child {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="envelope">
+    <div class="envelope-inner">
+      <div class="envelope-front">
+        <div class="address">
+          <p><span>Para:</span> <span>Mi Amor</span></p>
+          <p><span>De:</span> <span>Tu Persona Favorita</span></p>
+        </div>
+      </div>
+      <div class="envelope-back">
+        <div class="letter">
+          <img src="https://img.freepik.com/vector-premium/pulgar-dedos-imprimir-marca-huella-dactilar-amor-corazon_53500-1839.jpg" alt="Corazón con huella digital" loading="lazy">
+          <p>
+            Desde que entraste en mi vida, todo parece tener más color. Hay algo en ti que me hace sonreír sin razón...
+            <span class="highlight">
+              Me encantaría empezar algo contigo, algo bonito y lleno de risas. Si tú también sientes algo, aquí estaré.
+            </span>
+          </p>
+          <img src="https://img.freepik.com/fotos-premium/imagen-flores-amarillas-palabras-sol-citadas-ella_1191871-60686.jpg" alt="Flores amarillas con mensaje de amor" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
